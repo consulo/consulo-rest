@@ -1,0 +1,38 @@
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<name>ReStructuredText Support</name>
+	<id>org.jetbrains.plugins.rest</id>
+	<description>This plugin enables support for reStructuredText files (*.rst)</description>
+	<vendor>JetBrains</vendor>
+	<depends>com.intellij.spellchecker</depends>
+
+	<xi:include href="/META-INF/rest.xml" xpointer="xpointer(/idea-plugin/*)"/>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
+		<fileTypeFactory implementation="com.jetbrains.rest.RestFileTypeFactory"/>
+		<lang.syntaxHighlighterFactory key="ReST"
+									   implementationClass="com.jetbrains.rest.RestHighlighterFactory"/>
+		<lang.parserDefinition language="ReST" implementationClass="com.jetbrains.rest.parsing.RestParserDefinition"/>
+		<colorSettingsPage implementation="com.jetbrains.rest.RestColorsPage"/>
+
+		<completion.contributor language="ReST" implementationClass="com.jetbrains.rest.completion.DirectiveCompletionContributor"/>
+		<completion.contributor language="ReST" implementationClass="com.jetbrains.rest.completion.OptionCompletionContributor"/>
+		<completion.contributor language="ReST" implementationClass="com.jetbrains.rest.completion.ReferenceCompletionContributor"/>
+		<gotoDeclarationHandler implementation="com.jetbrains.rest.RestGotoProvider" order="FIRST"/>
+		<lang.psiStructureViewFactory language="ReST"
+									  implementationClass="com.jetbrains.rest.structureView.RestStructureViewFactory"/>
+		<annotator language="ReST" implementationClass="com.jetbrains.rest.validation.RestAnnotatingVisitor"/>
+		<lang.formatter language="ReST" implementationClass="com.jetbrains.rest.formatter.RestFormattingModelBuilder"/>
+		<codeInsight.fillParagraph language="ReST" implementationClass="com.jetbrains.rest.actions.RestFillParagraphHandler"/>
+
+		<additionalTextAttributes scheme="Default" file="colorSchemes/RestDefault.xml"/>
+		<additionalTextAttributes scheme="Darcula" file="colorSchemes/RestDarcula.xml"/>
+
+		<lang.elementManipulator forClass="com.jetbrains.rest.psi.RestLine"
+								 implementationClass="com.jetbrains.rest.psi.RestLineManipulator"/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij.spellchecker">
+		<support language="ReST" implementationClass="com.jetbrains.rest.spellchecker.RestSpellcheckerStrategy"/>
+	</extensions>
+</idea-plugin>
