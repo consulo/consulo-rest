@@ -1,6 +1,6 @@
 package com.jetbrains.rest;
 
-import org.consulo.lombok.annotations.Bundle;
+import consulo.lombok.annotations.Bundle;
 
 /**
  * User : catherine
