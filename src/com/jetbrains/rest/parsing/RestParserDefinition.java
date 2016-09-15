@@ -2,11 +2,9 @@ package com.jetbrains.rest.parsing;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
-import com.intellij.lang.LanguageVersion;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
 import com.intellij.lexer.Lexer;
-import com.intellij.openapi.project.Project;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -17,6 +15,7 @@ import com.jetbrains.rest.RestLanguage;
 import com.jetbrains.rest.RestTokenTypes;
 import com.jetbrains.rest.lexer.RestFlexLexer;
 import com.jetbrains.rest.psi.RestASTFactory;
+import consulo.lang.LanguageVersion;
 
 /**
  * User : catherine
@@ -28,12 +27,12 @@ public class RestParserDefinition implements ParserDefinition, RestTokenTypes {
 
   @NotNull
   @Override
-  public Lexer createLexer(Project project, LanguageVersion languageVersion) {
+  public Lexer createLexer(LanguageVersion languageVersion) {
     return new RestFlexLexer();
   }
 
   @Override
-  public PsiParser createParser(Project project, LanguageVersion languageVersion) {
+  public PsiParser createParser(LanguageVersion languageVersion) {
     return new RestParser();
   }
 

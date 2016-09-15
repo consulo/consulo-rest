@@ -1,13 +1,12 @@
 <idea-plugin>
-	<name>ReStructuredText Support</name>
 	<id>org.jetbrains.plugins.rest</id>
+	<name>ReStructuredText Support</name>
 	<description>This plugin enables support for reStructuredText files (*.rst)</description>
 	<vendor>JetBrains</vendor>
 	<version>SNAPSHOT</version>
-	<depends>com.intellij.spellchecker</depends>
+	<depends optional="true">com.intellij.spellchecker</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
 		<fileTypeFactory implementation="com.jetbrains.rest.RestFileTypeFactory"/>
 		<lang.syntaxHighlighterFactory key="ReST"
 									   implementationClass="com.jetbrains.rest.RestHighlighterFactory"/>
