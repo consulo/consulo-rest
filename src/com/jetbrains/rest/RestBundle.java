@@ -1,10 +1,28 @@
 package com.jetbrains.rest;
 
-import consulo.lombok.annotations.Bundle;
+import org.jetbrains.annotations.PropertyKey;
+import com.intellij.AbstractBundle;
 
 /**
  * User : catherine
  */
-@Bundle("com.jetbrains.rest.RestBundle")
-public class RestBundle {
+public class RestBundle extends AbstractBundle
+{
+	private static final String BUNDLE = "com.jetbrains.rest.RestBundle";
+	private static final RestBundle ourInstance = new RestBundle();
+
+	private RestBundle()
+	{
+		super(BUNDLE);
+	}
+
+	public static String message(@PropertyKey(resourceBundle = BUNDLE) String key)
+	{
+		return ourInstance.getMessage(key);
+	}
+
+	public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params)
+	{
+		return ourInstance.getMessage(key, params);
+	}
 }
