@@ -8,8 +8,8 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.codeStyle.CodeStyleSettings;
 import com.intellij.psi.codeStyle.CommonCodeStyleSettings;
 import com.jetbrains.rest.RestLanguage;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * User : ktisha
@@ -25,24 +25,24 @@ public class RestFormattingModelBuilder implements FormattingModelBuilderEx, Cus
 
   @Nullable
   @Override
-  public CommonCodeStyleSettings.IndentOptions getIndentOptionsToUse(@NotNull PsiFile file,
-                                                                     @NotNull FormatTextRanges ranges,
-                                                                     @NotNull CodeStyleSettings settings)
+  public CommonCodeStyleSettings.IndentOptions getIndentOptionsToUse(@Nonnull PsiFile file,
+                                                                     @Nonnull FormatTextRanges ranges,
+                                                                     @Nonnull CodeStyleSettings settings)
   {
     return null;
   }
 
-  @NotNull
+  @Nonnull
   @Override
-  public FormattingModel createModel(@NotNull PsiElement element,
-                                     @NotNull CodeStyleSettings settings,
-                                     @NotNull FormattingMode mode) {
+  public FormattingModel createModel(@Nonnull PsiElement element,
+                                     @Nonnull CodeStyleSettings settings,
+                                     @Nonnull FormattingMode mode) {
 
     final RestBlock block = new RestBlock(null, element.getNode(), null, Indent.getNoneIndent(), null);
     return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(), block, settings);
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
     return createModel(element, settings, FormattingMode.REFORMAT);

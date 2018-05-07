@@ -15,7 +15,8 @@
  */
 package com.jetbrains.rest.parsing;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiParser;
@@ -28,7 +29,7 @@ import consulo.lang.LanguageVersion;
  * User : catherine
  */
 public class RestParser implements PsiParser {
-  @NotNull
+  @Nonnull
   public ASTNode parse(IElementType root, PsiBuilder builder, LanguageVersion languageVersion) {
     final PsiBuilder.Marker rootMarker = builder.mark();
     while (!builder.eof()) {

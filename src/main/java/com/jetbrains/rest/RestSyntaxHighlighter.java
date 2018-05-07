@@ -23,7 +23,7 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.lexer.RestFlexLexer;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 import java.util.Map;
 
@@ -103,12 +103,12 @@ public class RestSyntaxHighlighter extends SyntaxHighlighterBase implements Rest
   }
 
 
-  @NotNull
+  @Nonnull
   public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
     return SyntaxHighlighterBase.pack(ATTRIBUTES.get(tokenType));
   }
 
-  @NotNull
+  @Nonnull
   public Lexer getHighlightingLexer() {
     return new RestFlexLexer();
   }

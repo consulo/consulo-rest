@@ -1,8 +1,8 @@
 package com.jetbrains.rest.psi;
 
 import com.intellij.lang.ASTNode;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
@@ -11,7 +11,7 @@ import java.text.StringCharacterIterator;
  * User : catherine
  */
 public class RestTitle extends RestElement {
-  public RestTitle(@NotNull final ASTNode node) {
+  public RestTitle(@Nonnull final ASTNode node) {
     super(node);
   }
 

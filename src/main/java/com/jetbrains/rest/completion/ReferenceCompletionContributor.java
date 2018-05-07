@@ -5,7 +5,8 @@ import static com.intellij.patterns.PlatformPatterns.psiElement;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.codeInsight.completion.CompletionContributor;
 import com.intellij.codeInsight.completion.CompletionParameters;
 import com.intellij.codeInsight.completion.CompletionResultSet;
@@ -35,7 +36,7 @@ public class ReferenceCompletionContributor extends CompletionContributor
 		extend(CompletionType.BASIC, PATTERN, new CompletionProvider()
 		{
 			@Override
-			public void addCompletions(@NotNull CompletionParameters parameters, ProcessingContext context, @NotNull CompletionResultSet result)
+			public void addCompletions(@Nonnull CompletionParameters parameters, ProcessingContext context, @Nonnull CompletionResultSet result)
 			{
 				PsiElement original = parameters.getPosition();
 				PsiFile file = original.getContainingFile();

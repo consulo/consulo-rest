@@ -1,14 +1,15 @@
 package com.jetbrains.rest.psi;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * User : catherine
  */
 public class RestDirectiveBlock extends RestElement {
-  public RestDirectiveBlock(@NotNull final ASTNode node) {
+  public RestDirectiveBlock(@Nonnull final ASTNode node) {
     super(node);
   }
 
@@ -17,7 +18,7 @@ public class RestDirectiveBlock extends RestElement {
     return "RestDirective:" + getNode().getElementType().toString();
   }
 
-  @NotNull
+  @Nonnull
   public String getDirectiveName() {
     PsiElement child = this.getFirstChild();
     if (child != null)

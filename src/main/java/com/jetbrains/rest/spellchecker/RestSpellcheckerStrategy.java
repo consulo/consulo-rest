@@ -1,5 +1,7 @@
 package com.jetbrains.rest.spellchecker;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.source.tree.LeafPsiElement;
 import com.intellij.psi.tree.IElementType;
@@ -9,7 +11,6 @@ import com.intellij.spellchecker.tokenizer.TokenConsumer;
 import com.intellij.spellchecker.tokenizer.Tokenizer;
 import com.jetbrains.rest.RestLanguage;
 import com.jetbrains.rest.RestTokenTypes;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author yole
@@ -17,12 +18,12 @@ import org.jetbrains.annotations.NotNull;
 public class RestSpellcheckerStrategy extends SpellcheckingStrategy {
   private static final Tokenizer<PsiElement> REST_ELEMENT_TOKENIZER = new Tokenizer<PsiElement>() {
     @Override
-    public void tokenize(@NotNull PsiElement element, TokenConsumer consumer) {
+    public void tokenize(@Nonnull PsiElement element, TokenConsumer consumer) {
       consumer.consumeToken(element, PlainTextSplitter.getInstance());
     }
   };
 
-  @NotNull
+  @Nonnull
   @Override
   public Tokenizer getTokenizer(PsiElement element) {
     IElementType elementType = element.getNode().getElementType();

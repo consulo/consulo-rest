@@ -1,5 +1,7 @@
 package com.jetbrains.rest.actions;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.codeInsight.editorActions.fillParagraph.ParagraphFillHandler;
 import com.intellij.psi.PsiComment;
 import com.intellij.psi.PsiElement;
@@ -7,22 +9,22 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiWhiteSpace;
 import com.jetbrains.rest.RestFile;
 import com.jetbrains.rest.RestTokenTypes;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
+import javax.annotation.Nullable;
 
 /**
  * User : ktisha
  */
 public class RestFillParagraphHandler extends ParagraphFillHandler {
 
-  @NotNull
-  protected String getPrefix(@NotNull final PsiElement element) {
+  @Nonnull
+  protected String getPrefix(@Nonnull final PsiElement element) {
     return element instanceof PsiComment? ".. " : "";
   }
 
-  @NotNull
+  @Nonnull
   @Override
-  protected String getPostfix(@NotNull PsiElement element) {
+  protected String getPostfix(@Nonnull PsiElement element) {
     return element.getNode().getElementType() == RestTokenTypes.COMMENT? "\n" : "";
   }
 
@@ -43,9 +45,9 @@ public class RestFillParagraphHandler extends ParagraphFillHandler {
   }
 
   @Override
-  protected void appendPostfix(@NotNull PsiElement element,
-                               @NotNull String text,
-                               @NotNull StringBuilder stringBuilder) {
+  protected void appendPostfix(@Nonnull PsiElement element,
+                               @Nonnull String text,
+                               @Nonnull StringBuilder stringBuilder) {
     if (element.getNode().getElementType() == RestTokenTypes.COMMENT) {
       stringBuilder.append(getPostfix(element));
     }

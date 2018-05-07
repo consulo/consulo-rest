@@ -6,7 +6,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.PsiElement;
 import com.jetbrains.rest.RestFileType;
 import com.jetbrains.rest.RestLanguage;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class RestAnnotatingVisitor implements Annotator {
     }
   }
 
-  public void annotate(@NotNull PsiElement psiElement, @NotNull AnnotationHolder holder) {
+  public void annotate(@Nonnull PsiElement psiElement, @Nonnull AnnotationHolder holder) {
     for(RestAnnotator annotator: myAnnotators) {
       annotator.annotateElement(psiElement, holder);
     }

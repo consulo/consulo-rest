@@ -7,8 +7,8 @@ import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.RestElementTypes;
 import com.jetbrains.rest.RestTokenTypes;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,13 +36,13 @@ public class RestBlock implements ASTBlock {
     return myNode;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public TextRange getTextRange() {
     return myNode.getTextRange();
   }
 
-  @NotNull
+  @Nonnull
   public List<Block> getSubBlocks() {
     if (mySubBlocks == null) {
       mySubBlocks = buildSubBlocks();
@@ -100,11 +100,11 @@ public class RestBlock implements ASTBlock {
 
   @Nullable
   @Override
-  public Spacing getSpacing(@Nullable Block child1, @NotNull Block child2) {
+  public Spacing getSpacing(@Nullable Block child1, @Nonnull Block child2) {
     return null;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public ChildAttributes getChildAttributes(int newChildIndex) {
     return new ChildAttributes(Indent.getNoneIndent(), null);

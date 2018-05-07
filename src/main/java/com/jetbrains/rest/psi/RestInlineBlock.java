@@ -3,13 +3,13 @@ package com.jetbrains.rest.psi;
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.util.text.StringUtil;
 import com.jetbrains.rest.validation.RestElementVisitor;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine
  */
 public class RestInlineBlock extends RestElement {
-  public RestInlineBlock(@NotNull final ASTNode node) {
+  public RestInlineBlock(@Nonnull final ASTNode node) {
     super(node);
   }
 

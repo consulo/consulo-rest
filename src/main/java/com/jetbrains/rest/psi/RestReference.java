@@ -5,13 +5,13 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.jetbrains.rest.validation.RestElementVisitor;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine
  */
 public class RestReference extends RestElement {
-  public RestReference(@NotNull final ASTNode node) {
+  public RestReference(@Nonnull final ASTNode node) {
     super(node);
   }
 

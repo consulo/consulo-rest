@@ -2,13 +2,13 @@ package com.jetbrains.rest;
 
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine
  */
 public class RestElementType extends IElementType {
-    public RestElementType(@NotNull @NonNls String s) {
+    public RestElementType(@Nonnull @NonNls String s) {
         super(s, RestLanguage.INSTANCE);
     }
 }

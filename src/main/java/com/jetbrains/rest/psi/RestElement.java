@@ -5,11 +5,11 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.NavigatablePsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.validation.RestElementVisitor;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 public class RestElement extends ASTWrapperPsiElement implements NavigatablePsiElement {
 
-  public RestElement(@NotNull final ASTNode node) {
+  public RestElement(@Nonnull final ASTNode node) {
     super(node);
   }
 
@@ -22,7 +22,7 @@ public class RestElement extends ASTWrapperPsiElement implements NavigatablePsiE
     visitor.visitRestElement(this);
   }
 
-  public void accept(@NotNull PsiElementVisitor visitor) {
+  public void accept(@Nonnull PsiElementVisitor visitor) {
     if (visitor instanceof RestElementVisitor) {
       acceptRestVisitor(((RestElementVisitor)visitor));
     }

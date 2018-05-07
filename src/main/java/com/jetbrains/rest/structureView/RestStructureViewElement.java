@@ -7,8 +7,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.psi.RestElement;
 import com.jetbrains.rest.psi.RestTitle;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import javax.swing.*;
 import java.util.LinkedHashSet;
 import java.util.Set;

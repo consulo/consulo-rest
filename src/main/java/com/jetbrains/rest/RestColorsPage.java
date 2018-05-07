@@ -8,7 +8,7 @@ import com.intellij.openapi.options.colors.ColorDescriptor;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
 import com.intellij.util.containers.HashMap;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 import javax.swing.*;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class RestColorsPage implements ColorSettingsPage {
   @NonNls private static final HashMap<String, TextAttributesKey> ourTagToDescriptorMap = new HashMap<String, TextAttributesKey>();
 
 
-  @NotNull
+  @Nonnull
   public String getDisplayName() {
     return "ReST file";
   }
@@ -42,24 +42,24 @@ public class RestColorsPage implements ColorSettingsPage {
     return RestFileType.INSTANCE.getIcon();
   }
 
-  @NotNull
+  @Nonnull
   public AttributesDescriptor[] getAttributeDescriptors() {
     return ATTRS;
   }
 
-  @NotNull
+  @Nonnull
   public ColorDescriptor[] getColorDescriptors() {
     return ColorDescriptor.EMPTY_ARRAY;
   }
 
-  @NotNull
+  @Nonnull
   public SyntaxHighlighter getHighlighter() {
     final SyntaxHighlighter highlighter = SyntaxHighlighterFactory.getSyntaxHighlighter(RestFileType.INSTANCE, null, null);
     assert highlighter != null;
     return highlighter;
   }
 
-  @NotNull
+  @Nonnull
   public String getDemoText() {
     return
       ".. comment for documentation master file\n\n" +

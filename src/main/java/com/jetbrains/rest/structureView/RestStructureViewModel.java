@@ -1,6 +1,7 @@
 package com.jetbrains.rest.structureView;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.ide.structureView.StructureViewModel;
 import com.intellij.ide.structureView.StructureViewModelBase;
 import com.intellij.ide.structureView.StructureViewTreeElement;
@@ -13,7 +14,7 @@ import com.jetbrains.rest.psi.RestTitle;
  * User : catherine
  */
 public class RestStructureViewModel extends StructureViewModelBase implements StructureViewModel.ElementInfoProvider, StructureViewModel.ExpandInfoProvider {
-  public RestStructureViewModel(@NotNull PsiFile psiFile) {
+  public RestStructureViewModel(@Nonnull PsiFile psiFile) {
     super(psiFile, new RestStructureViewElement(psiFile));
     withSorters(Sorter.ALPHA_SORTER);
     withSuitableClasses(RestTitle.class);

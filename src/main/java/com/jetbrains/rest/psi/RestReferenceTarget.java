@@ -1,16 +1,17 @@
 package com.jetbrains.rest.psi;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.jetbrains.rest.validation.RestElementVisitor;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * User : catherine
  */
 public class RestReferenceTarget extends RestElement {
-  public RestReferenceTarget(@NotNull final ASTNode node) {
+  public RestReferenceTarget(@Nonnull final ASTNode node) {
     super(node);
   }
 

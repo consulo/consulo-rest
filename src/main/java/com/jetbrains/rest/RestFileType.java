@@ -3,8 +3,8 @@ package com.jetbrains.rest;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import icons.RestIcons;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import javax.swing.*;
 
@@ -23,17 +23,17 @@ public class RestFileType extends LanguageFileType {
     super(RestLanguage.INSTANCE);
   }
 
-  @NotNull
-  public String getName() {
+  @Nonnull
+  public String getId() {
     return NAME;
   }
 
-  @NotNull
+  @Nonnull
   public String getDescription() {
     return DESCRIPTION;
   }
 
-  @NotNull
+  @Nonnull
   public String getDefaultExtension() {
     return DEFAULT_EXTENSION;
   }

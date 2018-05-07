@@ -4,7 +4,7 @@ import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.impl.source.PsiFileImpl;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine
@@ -14,13 +14,13 @@ public class RestFile extends PsiFileImpl {
     super(RestElementTypes.REST_FILE, RestElementTypes.REST_FILE, viewProvider);
   }
 
-  @NotNull
+  @Nonnull
   public FileType getFileType() {
     return RestFileType.INSTANCE;
   }
 
   @Override
-  public void accept(@NotNull PsiElementVisitor visitor) {
+  public void accept(@Nonnull PsiElementVisitor visitor) {
     visitor.visitFile(this);
   }
 

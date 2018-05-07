@@ -1,6 +1,7 @@
 package com.jetbrains.rest.parsing;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
@@ -25,7 +26,7 @@ public class RestParserDefinition implements ParserDefinition, RestTokenTypes {
 
   private final RestASTFactory astFactory = new RestASTFactory();
 
-  @NotNull
+  @Nonnull
   @Override
   public Lexer createLexer(LanguageVersion languageVersion) {
     return new RestFlexLexer();
@@ -41,25 +42,25 @@ public class RestParserDefinition implements ParserDefinition, RestTokenTypes {
     return FILE_ELEMENT_TYPE;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public TokenSet getWhitespaceTokens(LanguageVersion languageVersion) {
     return TokenSet.EMPTY;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public TokenSet getCommentTokens(LanguageVersion languageVersion) {
     return TokenSet.EMPTY;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public TokenSet getStringLiteralElements(LanguageVersion languageVersion) {
     return TokenSet.EMPTY;
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public PsiElement createElement(ASTNode node) {
     return astFactory.create(node);
