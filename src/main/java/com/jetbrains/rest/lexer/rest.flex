@@ -1,18 +1,18 @@
 package com.jetbrains.rest.lexer;
 
-import com.intellij.lexer.FlexLexer;
+import com.intellij.lexer.LexerBase;
 import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.RestTokenTypes;
 
-/* Auto generated File */
 %%
 
 %class _RestFlexLexer
-%implements FlexLexer, RestTokenTypes
+%extends LexerBase
+%implements RestTokenTypes
 %unicode
 %public
 %ignorecase
-%function advance
+%function advanceImpl
 %type IElementType
 
 
@@ -49,13 +49,13 @@ ANY= .|\n
 %state INIT
 
 %{
-  int myState = 0;    //python=1;django=2;initial=0;
+  int myInnerState = 0;    //python=1;django=2;initial=0;
   int myIndent = 0;
-  private IElementType chooseType () {if (myState == 2)
+  private IElementType chooseType () {if (myInnerState == 2)
                                         return DJANGO_LINE;
-                                      else if (myState == 3)
+                                      else if (myInnerState == 3)
                                         return JAVASCRIPT_LINE;
-                                      else if (myState == 1)
+                                      else if (myInnerState == 1)
                                         return PYTHON_LINE;
                                       else
                                         return INLINE_LINE;
@@ -141,7 +141,7 @@ ANY= .|\n
 
 <QUOTED> {
 {ADORNMENT_SYMBOL}                                  { yybegin(PRE_QUOTED); return chooseType();}
-.                                                   { yypushback(1); myState = 0; yybegin(INIT);}
+.                                                   { yypushback(1); myInnerState = 0; yybegin(INIT);}
 }
 
 <PRE_INDENTED> {
@@ -157,7 +157,7 @@ ANY= .|\n
                                                      }  }
 {SPACE}*{CRLF}+                                     { return chooseType();}
 {CRLF}+                                             { return chooseType();}
-.                                                   { yypushback(1); myIndent = 0; myState = 0; yybegin(INIT);}
+.                                                   { yypushback(1); myIndent = 0; myInnerState = 0; yybegin(INIT);}
 }
 
 <IN_EXPLISIT_MARKUP> {
@@ -187,16 +187,16 @@ ANY= .|\n
 {CRLF}                                              { yybegin(INIT); return WHITESPACE; }
 [A-Za-z+]+{CRLF}{CRLF}                               { String value = yytext().toString().trim();
                                                       if ("python".equalsIgnoreCase(value)) {
-                                                        myState = 1;
+                                                        myInnerState = 1;
                                                         yybegin(IN_INLINE);
                                                       }
                                                       else if ("django".equalsIgnoreCase(value) ||
                                                               "html+django".equalsIgnoreCase(value)) {
-                                                        myState = 2;
+                                                        myInnerState = 2;
                                                         yybegin(IN_INLINE);
                                                       }
                                                       else if ("javascript".equalsIgnoreCase(value)) {
-                                                        myState = 3;
+                                                        myInnerState = 3;
                                                         yybegin(IN_INLINE);
                                                       }
                                                       else {

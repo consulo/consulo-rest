@@ -73,7 +73,7 @@ public class RestStructureViewElement implements StructureViewTreeElement {
         return null;
       }
 
-      public Icon getIcon(boolean open) {
+      public Icon getIcon() {
         return null;
       }
     };
