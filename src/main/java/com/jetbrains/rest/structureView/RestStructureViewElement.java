@@ -1,5 +1,10 @@
 package com.jetbrains.rest.structureView;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+import javax.annotation.Nullable;
+
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.NavigatablePsiElement;
@@ -7,11 +12,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.psi.RestElement;
 import com.jetbrains.rest.psi.RestTitle;
-
-import javax.annotation.Nullable;
-import javax.swing.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import consulo.ui.image.Image;
 
 /**
  * Handles nodes in ReST Structure View.
@@ -73,7 +74,7 @@ public class RestStructureViewElement implements StructureViewTreeElement {
         return null;
       }
 
-      public Icon getIcon() {
+      public Image getIcon() {
         return null;
       }
     };
