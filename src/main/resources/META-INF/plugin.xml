@@ -1,4 +1,4 @@
-<idea-plugin>
+<consulo-plugin>
 	<id>org.jetbrains.plugins.rest</id>
 	<name>ReStructuredText Support</name>
 	<description>This plugin enables support for reStructuredText files (*.rst)</description>
@@ -33,4 +33,4 @@
 	<extensions defaultExtensionNs="com.intellij.spellchecker">
 		<support language="ReST" implementationClass="com.jetbrains.rest.spellchecker.RestSpellcheckerStrategy"/>
 	</extensions>
-</idea-plugin>
+</consulo-plugin>

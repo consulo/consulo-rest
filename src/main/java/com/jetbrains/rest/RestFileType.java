@@ -1,12 +1,12 @@
 package com.jetbrains.rest;
 
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.reStructuredText.icon.ReStructuredTextIconGroup;
+import consulo.ui.image.Image;
+import org.jetbrains.annotations.NonNls;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import org.jetbrains.annotations.NonNls;
-import com.intellij.openapi.fileTypes.LanguageFileType;
-import consulo.ui.image.Image;
-import icons.RestIcons;
 
 /**
  * User : catherine
@@ -40,7 +40,7 @@ public class RestFileType extends LanguageFileType {
 
   @Nullable
   public Image getIcon() {
-    return RestIcons.Rst;
+    return ReStructuredTextIconGroup.rst();
   }
 }
 
