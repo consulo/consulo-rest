@@ -5,6 +5,9 @@
 	<vendor>JetBrains</vendor>
 	<version>SNAPSHOT</version>
 	<depends optional="true">com.intellij.spellchecker</depends>
+	<tags>
+		<tag>markup.language</tag>
+	</tags>
 
 	<extensions defaultExtensionNs="com.intellij">
 		<fileTypeFactory implementation="com.jetbrains.rest.RestFileTypeFactory"/>
