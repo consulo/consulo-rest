@@ -1,9 +1,9 @@
 package com.jetbrains.rest;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.localize.LocalizeValue;
 import consulo.reStructuredText.icon.ReStructuredTextIconGroup;
 import consulo.ui.image.Image;
-import org.jetbrains.annotations.NonNls;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -15,9 +15,7 @@ import javax.annotation.Nullable;
  */
 public class RestFileType extends LanguageFileType {
   public static final RestFileType INSTANCE = new RestFileType();
-  @NonNls public static final String DEFAULT_EXTENSION = "rst";
-  @NonNls private static final String NAME = "ReST";
-  @NonNls private static final String DESCRIPTION = "reStructuredText files";
+  public static final String DEFAULT_EXTENSION = "rst";
 
   private RestFileType() {
     super(RestLanguage.INSTANCE);
@@ -25,12 +23,12 @@ public class RestFileType extends LanguageFileType {
 
   @Nonnull
   public String getId() {
-    return NAME;
+    return "ReST";
   }
 
   @Nonnull
-  public String getDescription() {
-    return DESCRIPTION;
+  public LocalizeValue getDescription() {
+    return LocalizeValue.localizeTODO("reStructuredText files");
   }
 
   @Nonnull
