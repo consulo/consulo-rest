@@ -1,43 +1,44 @@
 package com.jetbrains.rest.completion;
 
-import static com.intellij.patterns.PlatformPatterns.psiElement;
-import static com.intellij.patterns.StandardPatterns.or;
-
-import javax.annotation.Nonnull;
-
-import com.intellij.codeInsight.completion.CompletionContributor;
-import com.intellij.codeInsight.completion.CompletionParameters;
-import com.intellij.codeInsight.completion.CompletionResultSet;
-import com.intellij.codeInsight.completion.CompletionType;
-import com.intellij.codeInsight.lookup.LookupElementBuilder;
-import com.intellij.patterns.PsiElementPattern;
-import com.intellij.psi.PsiElement;
-import com.intellij.util.ProcessingContext;
+import com.jetbrains.rest.RestLanguage;
 import com.jetbrains.rest.RestTokenTypes;
 import com.jetbrains.rest.RestUtil;
 import com.jetbrains.rest.psi.RestReferenceTarget;
-import consulo.codeInsight.completion.CompletionProvider;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.Language;
+import consulo.language.editor.completion.*;
+import consulo.language.editor.completion.lookup.LookupElementBuilder;
+import consulo.language.pattern.PsiElementPattern;
+import consulo.language.psi.PsiElement;
+import consulo.language.util.ProcessingContext;
+
+import javax.annotation.Nonnull;
+
+import static consulo.language.pattern.PlatformPatterns.psiElement;
+import static consulo.language.pattern.StandardPatterns.or;
 
 /**
  * User : catherine
  */
-public class DirectiveCompletionContributor extends CompletionContributor
-{
-	public static final PsiElementPattern.Capture<PsiElement> DIRECTIVE_PATTERN = psiElement().afterSibling(or(psiElement().
-			withElementType(RestTokenTypes.WHITESPACE).afterSibling(psiElement(RestReferenceTarget.class)), psiElement().withElementType(RestTokenTypes.EXPLISIT_MARKUP_START)));
+@ExtensionImpl
+public class DirectiveCompletionContributor extends CompletionContributor {
+    public static final PsiElementPattern.Capture<PsiElement> DIRECTIVE_PATTERN = psiElement().afterSibling(or(psiElement().
+            withElementType(RestTokenTypes.WHITESPACE).afterSibling(psiElement(RestReferenceTarget.class)), psiElement().withElementType(RestTokenTypes.EXPLISIT_MARKUP_START)));
 
-	public DirectiveCompletionContributor()
-	{
-		extend(CompletionType.BASIC, DIRECTIVE_PATTERN, new CompletionProvider()
-		{
-			@Override
-			public void addCompletions(@Nonnull CompletionParameters parameters, ProcessingContext context, @Nonnull CompletionResultSet result)
-			{
-				for(String tag : RestUtil.getDirectives())
-				{
-					result.addElement(LookupElementBuilder.create(tag));
-				}
-			}
-		});
-	}
+    public DirectiveCompletionContributor() {
+        extend(CompletionType.BASIC, DIRECTIVE_PATTERN, new CompletionProvider() {
+            @Override
+            public void addCompletions(@Nonnull CompletionParameters parameters, ProcessingContext context, @Nonnull CompletionResultSet result) {
+                for (String tag : RestUtil.getDirectives()) {
+                    result.addElement(LookupElementBuilder.create(tag));
+                }
+            }
+        });
+    }
+
+    @Nonnull
+    @Override
+    public Language getLanguage() {
+        return RestLanguage.INSTANCE;
+    }
 }

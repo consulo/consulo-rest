@@ -1,18 +1,17 @@
 package com.jetbrains.rest.structureView;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
-import javax.annotation.Nullable;
-
-import com.intellij.ide.structureView.StructureViewTreeElement;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.psi.NavigatablePsiElement;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.psi.RestElement;
 import com.jetbrains.rest.psi.RestTitle;
+import consulo.fileEditor.structureView.StructureViewTreeElement;
+import consulo.language.psi.NavigatablePsiElement;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiElementVisitor;
+import consulo.navigation.ItemPresentation;
 import consulo.ui.image.Image;
+
+import javax.annotation.Nullable;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Handles nodes in ReST Structure View.

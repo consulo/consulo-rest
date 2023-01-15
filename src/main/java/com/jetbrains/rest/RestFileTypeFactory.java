@@ -1,13 +1,15 @@
 package com.jetbrains.rest;
 
-import javax.annotation.Nonnull;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.virtualFileSystem.fileType.FileTypeConsumer;
+import consulo.virtualFileSystem.fileType.FileTypeFactory;
 
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine
  */
+@ExtensionImpl
 public class RestFileTypeFactory extends FileTypeFactory {
   @Override
   public void createFileTypes(final @Nonnull FileTypeConsumer consumer) {

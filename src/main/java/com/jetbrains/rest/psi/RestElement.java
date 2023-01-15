@@ -1,10 +1,11 @@
 package com.jetbrains.rest.psi;
 
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.NavigatablePsiElement;
-import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.validation.RestElementVisitor;
+import consulo.language.ast.ASTNode;
+import consulo.language.impl.psi.ASTWrapperPsiElement;
+import consulo.language.psi.NavigatablePsiElement;
+import consulo.language.psi.PsiElementVisitor;
+
 import javax.annotation.Nonnull;
 
 public class RestElement extends ASTWrapperPsiElement implements NavigatablePsiElement {

@@ -1,9 +1,9 @@
 package com.jetbrains.rest.psi;
 
-import com.intellij.lang.ASTNode;
+import consulo.language.ast.ASTNode;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 

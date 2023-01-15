@@ -1,6 +1,6 @@
 package com.jetbrains.rest;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.language.file.LanguageFileType;
 import consulo.localize.LocalizeValue;
 import consulo.reStructuredText.icon.ReStructuredTextIconGroup;
 import consulo.ui.image.Image;

@@ -1,25 +1,28 @@
 package com.jetbrains.rest.actions;
 
-import javax.annotation.Nonnull;
-
-import com.intellij.codeInsight.editorActions.fillParagraph.ParagraphFillHandler;
-import com.intellij.psi.PsiComment;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiWhiteSpace;
 import com.jetbrains.rest.RestFile;
+import com.jetbrains.rest.RestLanguage;
 import com.jetbrains.rest.RestTokenTypes;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.Language;
+import consulo.language.editor.action.ParagraphFillHandler;
+import consulo.language.psi.PsiComment;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiFile;
+import consulo.language.psi.PsiWhiteSpace;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
  * User : ktisha
  */
+@ExtensionImpl
 public class RestFillParagraphHandler extends ParagraphFillHandler {
 
   @Nonnull
   protected String getPrefix(@Nonnull final PsiElement element) {
-    return element instanceof PsiComment? ".. " : "";
+    return element instanceof PsiComment ? ".. " : "";
   }
 
   @Nonnull
@@ -29,7 +32,7 @@ public class RestFillParagraphHandler extends ParagraphFillHandler {
   }
 
   @Override
-  protected boolean isAvailableForFile(@Nullable PsiFile psiFile) {
+  public boolean isAvailableForFile(@Nullable PsiFile psiFile) {
     return psiFile instanceof RestFile;
   }
 
@@ -39,7 +42,7 @@ public class RestFillParagraphHandler extends ParagraphFillHandler {
   }
 
   @Override
-  protected boolean atWhitespaceToken(@Nullable final PsiElement element) {
+  public boolean atWhitespaceToken(@Nullable final PsiElement element) {
     return element instanceof PsiWhiteSpace ||
            element != null && element.getNode().getElementType() == RestTokenTypes.WHITESPACE;
   }
@@ -51,5 +54,11 @@ public class RestFillParagraphHandler extends ParagraphFillHandler {
     if (element.getNode().getElementType() == RestTokenTypes.COMMENT) {
       stringBuilder.append(getPostfix(element));
     }
+  }
+
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return RestLanguage.INSTANCE;
   }
 }

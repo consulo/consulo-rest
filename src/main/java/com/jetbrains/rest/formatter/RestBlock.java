@@ -1,15 +1,14 @@
 package com.jetbrains.rest.formatter;
 
-
-import com.intellij.formatting.*;
-import com.intellij.lang.ASTNode;
-import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.RestElementTypes;
 import com.jetbrains.rest.RestTokenTypes;
+import consulo.document.util.TextRange;
+import consulo.language.ast.ASTNode;
+import consulo.language.ast.IElementType;
+import consulo.language.codeStyle.*;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

@@ -1,8 +1,7 @@
 package com.jetbrains.rest;
 
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
-
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -23,9 +22,9 @@ public class RestUtil {
   };
 
 
-  public static final Set<String> PREDEFINED_ROLES = Sets.newHashSet();
-  public static final Set<String> SPHINX_ROLES = Sets.newHashSet();
-  private static final Map<String, String[]> DIRECTIVES = Maps.newHashMap();
+  public static final Set<String> PREDEFINED_ROLES = new HashSet<>();
+  public static final Set<String> SPHINX_ROLES = new HashSet<>();
+  private static final Map<String, String[]> DIRECTIVES = new HashMap<>();
 
   static {
     PREDEFINED_ROLES.add(":emphasis:");

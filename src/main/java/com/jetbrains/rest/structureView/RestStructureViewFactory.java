@@ -1,18 +1,22 @@
 package com.jetbrains.rest.structureView;
 
+import com.jetbrains.rest.RestLanguage;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.codeEditor.Editor;
+import consulo.fileEditor.structureView.StructureViewBuilder;
+import consulo.fileEditor.structureView.StructureViewModel;
+import consulo.fileEditor.structureView.TreeBasedStructureViewBuilder;
+import consulo.language.Language;
+import consulo.language.editor.structureView.PsiStructureViewFactory;
+import consulo.language.psi.PsiFile;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import com.intellij.ide.structureView.StructureViewBuilder;
-import com.intellij.ide.structureView.StructureViewModel;
-import com.intellij.ide.structureView.TreeBasedStructureViewBuilder;
-import com.intellij.lang.PsiStructureViewFactory;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.psi.PsiFile;
 
 /**
  * User : catherine
  */
+@ExtensionImpl
 public class RestStructureViewFactory implements PsiStructureViewFactory {
   @Override
   public StructureViewBuilder getStructureViewBuilder(final PsiFile psiFile) {
@@ -24,5 +28,11 @@ public class RestStructureViewFactory implements PsiStructureViewFactory {
         return new RestStructureViewModel(psiFile);
       }
     };
+  }
+
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return RestLanguage.INSTANCE;
   }
 }

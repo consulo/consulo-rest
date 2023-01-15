@@ -1,8 +1,8 @@
 package com.jetbrains.rest.psi;
 
-import javax.annotation.Nonnull;
+import consulo.language.ast.ASTNode;
 
-import com.intellij.lang.ASTNode;
+import javax.annotation.Nonnull;
 
 /**
  * User : ktisha

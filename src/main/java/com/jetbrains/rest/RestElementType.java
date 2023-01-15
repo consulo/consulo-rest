@@ -1,7 +1,8 @@
 package com.jetbrains.rest;
 
-import com.intellij.psi.tree.IElementType;
+import consulo.language.ast.IElementType;
 import org.jetbrains.annotations.NonNls;
+
 import javax.annotation.Nonnull;
 
 /**

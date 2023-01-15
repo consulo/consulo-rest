@@ -1,14 +1,16 @@
 package com.jetbrains.rest;
 
-import com.intellij.codeInsight.navigation.actions.GotoDeclarationHandlerBase;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.util.PsiTreeUtil;
 import com.jetbrains.rest.psi.RestReference;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.codeEditor.Editor;
+import consulo.language.editor.navigation.GotoDeclarationHandlerBase;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.util.PsiTreeUtil;
 
 /**
  * User : catherine
  */
+@ExtensionImpl
 public class RestGotoProvider extends GotoDeclarationHandlerBase {
 
   public PsiElement getGotoDeclarationTarget(PsiElement source, Editor editor) {

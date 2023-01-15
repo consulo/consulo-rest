@@ -1,9 +1,9 @@
 package com.jetbrains.rest.validation;
 
-import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.PsiElement;
 import com.jetbrains.rest.RestBundle;
 import com.jetbrains.rest.psi.RestInlineBlock;
+import consulo.document.util.TextRange;
+import consulo.language.psi.PsiElement;
 
 /**
  * Looks for invalid inline block

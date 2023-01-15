@@ -1,8 +1,8 @@
 package com.jetbrains.rest.lexer;
 
-import com.intellij.lexer.MergingLexerAdapter;
-import com.intellij.psi.tree.TokenSet;
 import com.jetbrains.rest.RestTokenTypes;
+import consulo.language.ast.TokenSet;
+import consulo.language.lexer.MergingLexerAdapter;
 
 /**
  * User : catherine

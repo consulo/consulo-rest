@@ -1,9 +1,9 @@
 package com.jetbrains.rest.validation;
 
-import com.intellij.psi.util.PsiTreeUtil;
 import com.jetbrains.rest.RestBundle;
 import com.jetbrains.rest.RestFile;
 import com.jetbrains.rest.psi.RestReferenceTarget;
+import consulo.language.psi.util.PsiTreeUtil;
 
 /**
  * Looks for double defined hyperlinks

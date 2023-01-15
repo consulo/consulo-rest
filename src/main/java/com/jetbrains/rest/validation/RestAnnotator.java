@@ -1,7 +1,7 @@
 package com.jetbrains.rest.validation;
 
-import com.intellij.lang.annotation.AnnotationHolder;
-import com.intellij.psi.PsiElement;
+import consulo.language.editor.annotation.AnnotationHolder;
+import consulo.language.psi.PsiElement;
 
 /**
  * User : catherine

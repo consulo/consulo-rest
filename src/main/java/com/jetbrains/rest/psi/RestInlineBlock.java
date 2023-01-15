@@ -1,8 +1,9 @@
 package com.jetbrains.rest.psi;
 
-import com.intellij.lang.ASTNode;
-import com.intellij.openapi.util.text.StringUtil;
 import com.jetbrains.rest.validation.RestElementVisitor;
+import consulo.language.ast.ASTNode;
+import consulo.util.lang.StringUtil;
+
 import javax.annotation.Nonnull;
 
 /**

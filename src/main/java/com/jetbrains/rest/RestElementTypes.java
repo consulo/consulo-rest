@@ -1,6 +1,6 @@
 package com.jetbrains.rest;
 
-import com.intellij.psi.tree.IFileElementType;
+import consulo.language.ast.IFileElementType;
 
 /**
  * User : catherine

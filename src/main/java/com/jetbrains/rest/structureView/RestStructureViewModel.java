@@ -1,14 +1,14 @@
 package com.jetbrains.rest.structureView;
 
-import javax.annotation.Nonnull;
-
-import com.intellij.ide.structureView.StructureViewModel;
-import com.intellij.ide.structureView.StructureViewModelBase;
-import com.intellij.ide.structureView.StructureViewTreeElement;
-import com.intellij.ide.util.treeView.smartTree.Sorter;
-import com.intellij.psi.PsiFile;
 import com.jetbrains.rest.RestFile;
 import com.jetbrains.rest.psi.RestTitle;
+import consulo.fileEditor.structureView.StructureViewModel;
+import consulo.fileEditor.structureView.StructureViewTreeElement;
+import consulo.fileEditor.structureView.tree.Sorter;
+import consulo.language.editor.structureView.StructureViewModelBase;
+import consulo.language.psi.PsiFile;
+
+import javax.annotation.Nonnull;
 
 /**
  * User : catherine

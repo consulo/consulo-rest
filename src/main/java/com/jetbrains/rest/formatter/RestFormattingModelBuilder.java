@@ -1,21 +1,22 @@
 package com.jetbrains.rest.formatter;
 
-import com.intellij.formatting.*;
-import com.intellij.lang.ASTNode;
-import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.codeStyle.CodeStyleSettings;
-import com.intellij.psi.codeStyle.CommonCodeStyleSettings;
 import com.jetbrains.rest.RestLanguage;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.document.util.TextRange;
+import consulo.language.Language;
+import consulo.language.ast.ASTNode;
+import consulo.language.codeStyle.*;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiFile;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
  * User : ktisha
  */
-@SuppressWarnings("UseOfSystemOutOrSystemErr")
-public class RestFormattingModelBuilder implements FormattingModelBuilderEx, CustomFormattingModelBuilder {
+@ExtensionImpl
+public class RestFormattingModelBuilder implements FormattingModelBuilder, CustomFormattingModelBuilder {
 
   @Override
   public boolean isEngagedToFormat(PsiElement context) {
@@ -23,29 +24,13 @@ public class RestFormattingModelBuilder implements FormattingModelBuilderEx, Cus
     return file != null && file.getLanguage() == RestLanguage.INSTANCE;
   }
 
-  @Nullable
-  @Override
-  public CommonCodeStyleSettings.IndentOptions getIndentOptionsToUse(@Nonnull PsiFile file,
-                                                                     @Nonnull FormatTextRanges ranges,
-                                                                     @Nonnull CodeStyleSettings settings)
-  {
-    return null;
-  }
-
   @Nonnull
   @Override
-  public FormattingModel createModel(@Nonnull PsiElement element,
-                                     @Nonnull CodeStyleSettings settings,
-                                     @Nonnull FormattingMode mode) {
-
+  public FormattingModel createModel(@Nonnull FormattingContext formattingContext) {
+    PsiElement element = formattingContext.getPsiElement();
+    CodeStyleSettings settings = formattingContext.getCodeStyleSettings();
     final RestBlock block = new RestBlock(null, element.getNode(), null, Indent.getNoneIndent(), null);
     return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(), block, settings);
-  }
-
-  @Nonnull
-  @Override
-  public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
-    return createModel(element, settings, FormattingMode.REFORMAT);
   }
 
   @Nullable
@@ -54,5 +39,11 @@ public class RestFormattingModelBuilder implements FormattingModelBuilderEx, Cus
     final PsiElement element = elementAtOffset.getPsi();
     final PsiElement container = element.getParent();
     return container != null ? container.getTextRange() : null;
+  }
+
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return RestLanguage.INSTANCE;
   }
 }

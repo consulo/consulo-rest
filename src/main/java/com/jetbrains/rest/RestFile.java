@@ -1,9 +1,10 @@
 package com.jetbrains.rest;
 
-import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.psi.FileViewProvider;
-import com.intellij.psi.PsiElementVisitor;
-import com.intellij.psi.impl.source.PsiFileImpl;
+import consulo.language.file.FileViewProvider;
+import consulo.language.impl.psi.PsiFileImpl;
+import consulo.language.psi.PsiElementVisitor;
+import consulo.virtualFileSystem.fileType.FileType;
+
 import javax.annotation.Nonnull;
 
 /**
@@ -28,5 +29,4 @@ public class RestFile extends PsiFileImpl {
   public String toString() {
     return "rest file";
   }
-
 }

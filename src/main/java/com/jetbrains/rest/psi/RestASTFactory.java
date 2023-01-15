@@ -1,11 +1,11 @@
 package com.jetbrains.rest.psi;
 
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.RestElementTypes;
 import com.jetbrains.rest.RestTokenTypes;
+import consulo.language.ast.ASTNode;
+import consulo.language.ast.IElementType;
+import consulo.language.impl.psi.ASTWrapperPsiElement;
+import consulo.language.psi.PsiElement;
 
 /**
  * User : catherine

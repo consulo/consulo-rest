@@ -1,21 +1,22 @@
 package com.jetbrains.rest;
 
-import com.intellij.lang.Language;
-import com.intellij.psi.templateLanguages.TemplateLanguage;
 import com.jetbrains.rest.validation.RestAnnotator;
 import com.jetbrains.rest.validation.RestHyperlinksAnnotator;
 import com.jetbrains.rest.validation.RestInlineBlockAnnotator;
 import com.jetbrains.rest.validation.RestReferenceTargetAnnotator;
+import consulo.language.Language;
+import consulo.language.template.TemplateLanguage;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.function.Supplier;
 
 /**
  * User : catherine
  */
-public class RestLanguage extends Language implements TemplateLanguage  {
+public class RestLanguage extends Language implements TemplateLanguage {
   public static final RestLanguage INSTANCE = new RestLanguage();
-  private final Set<Class<? extends RestAnnotator>> _annotators = new CopyOnWriteArraySet<Class<? extends RestAnnotator>>();
+  private final Set<Supplier<RestAnnotator>> _annotators = new CopyOnWriteArraySet<>();
   private RestLanguage() {
     super("ReST");
   }
@@ -30,12 +31,12 @@ public class RestLanguage extends Language implements TemplateLanguage  {
     return RestFileType.INSTANCE;
   }
   {
-    _annotators.add(RestHyperlinksAnnotator.class);
-    _annotators.add(RestReferenceTargetAnnotator.class);
-    _annotators.add(RestInlineBlockAnnotator.class);
+    _annotators.add(RestHyperlinksAnnotator::new);
+    _annotators.add(RestReferenceTargetAnnotator::new);
+    _annotators.add(RestInlineBlockAnnotator::new);
   }
 
-  public Set<Class<? extends RestAnnotator>> getAnnotators() {
+  public Set<Supplier<RestAnnotator>> getAnnotators() {
     return _annotators;
   }
 }

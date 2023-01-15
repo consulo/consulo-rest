@@ -1,7 +1,7 @@
 package com.jetbrains.rest.validation;
 
-import com.intellij.psi.PsiElementVisitor;
 import com.jetbrains.rest.psi.*;
+import consulo.language.psi.PsiElementVisitor;
 
 /**
  * User : catherine

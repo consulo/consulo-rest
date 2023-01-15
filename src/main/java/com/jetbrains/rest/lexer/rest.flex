@@ -1,8 +1,8 @@
 package com.jetbrains.rest.lexer;
 
-import com.intellij.lexer.LexerBase;
-import com.intellij.psi.tree.IElementType;
 import com.jetbrains.rest.RestTokenTypes;
+import consulo.language.ast.IElementType;
+import consulo.language.lexer.LexerBase;
 
 %%
 
