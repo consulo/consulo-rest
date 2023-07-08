@@ -1,0 +1,30 @@
+INSP.GROUP.rest:
+  text: ReST
+INSP.role.not.defined:
+  text: Role is not defined
+QFIX.ignore.role:
+  text: Ignore undefined role ''{0}''
+ANN.unknown.target:
+  text: Unknown target name ''{0}''
+ANN.duplicate.target:
+  text: Duplicate explicit target name ''{0}''
+ANN.unusable.anonymous.target:
+  text: Anonymous hyperlink target has no reference
+ANN.inline.block:
+  text: Blank line is required after a literal block
+runcfg.docutils.display_name:
+  text: Python docs
+runcfg.docutils.description:
+  text: Python documentation run configuration
+runcfg.docutils.input:
+  text: 'Input:'
+runcfg.docutils.output:
+  text: 'Output:'
+runcfg.docutils.command:
+  text: 'Command:'
+runcfg.docutils.options:
+  text: 'Options:'
+runcfg.dlg.select.script.path:
+  text: 'Select path:'
+rest.file.type.description:
+  text: reStructuredText files

@@ -3,10 +3,10 @@ package com.jetbrains.rest;
 import consulo.language.file.LanguageFileType;
 import consulo.localize.LocalizeValue;
 import consulo.reStructuredText.icon.ReStructuredTextIconGroup;
+import consulo.reStructuredText.localize.RestLocalize;
 import consulo.ui.image.Image;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * User : catherine
@@ -28,7 +28,7 @@ public class RestFileType extends LanguageFileType {
 
   @Nonnull
   public LocalizeValue getDescription() {
-    return LocalizeValue.localizeTODO("reStructuredText files");
+    return RestLocalize.restFileTypeDescription();
   }
 
   @Nonnull
@@ -36,7 +36,7 @@ public class RestFileType extends LanguageFileType {
     return DEFAULT_EXTENSION;
   }
 
-  @Nullable
+  @Nonnull
   public Image getIcon() {
     return ReStructuredTextIconGroup.rst();
   }
