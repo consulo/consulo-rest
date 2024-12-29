@@ -3,7 +3,7 @@ package com.jetbrains.rest;
 import consulo.language.ast.IElementType;
 import org.jetbrains.annotations.NonNls;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * User : catherine

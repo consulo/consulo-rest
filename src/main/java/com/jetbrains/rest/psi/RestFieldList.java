@@ -2,7 +2,7 @@ package com.jetbrains.rest.psi;
 
 import consulo.language.ast.ASTNode;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * User : ktisha

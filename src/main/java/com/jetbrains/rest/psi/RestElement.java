@@ -6,7 +6,7 @@ import consulo.language.impl.psi.ASTWrapperPsiElement;
 import consulo.language.psi.NavigatablePsiElement;
 import consulo.language.psi.PsiElementVisitor;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 public class RestElement extends ASTWrapperPsiElement implements NavigatablePsiElement {
 

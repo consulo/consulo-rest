@@ -4,7 +4,7 @@ import com.jetbrains.rest.validation.RestElementVisitor;
 import consulo.language.ast.ASTNode;
 import consulo.util.lang.StringUtil;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * User : catherine

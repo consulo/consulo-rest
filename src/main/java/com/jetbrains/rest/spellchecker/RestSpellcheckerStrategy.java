@@ -12,7 +12,7 @@ import consulo.language.spellcheker.tokenizer.TokenConsumer;
 import consulo.language.spellcheker.tokenizer.Tokenizer;
 import consulo.language.spellcheker.tokenizer.splitter.PlainTextTokenSplitter;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * @author yole

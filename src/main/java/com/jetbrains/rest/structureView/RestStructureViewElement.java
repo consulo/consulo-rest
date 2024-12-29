@@ -9,7 +9,7 @@ import consulo.language.psi.PsiElementVisitor;
 import consulo.navigation.ItemPresentation;
 import consulo.ui.image.Image;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
