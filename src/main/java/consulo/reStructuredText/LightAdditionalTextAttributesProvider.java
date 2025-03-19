@@ -13,7 +13,7 @@ import jakarta.annotation.Nonnull;
  * @since 15/01/2023
  */
 @ExtensionImpl
-public class DarkAdditionalTextAttributesProvider implements EditorColorSchemeExtender {
+public class LightAdditionalTextAttributesProvider implements EditorColorSchemeExtender {
     @Override
     public void extend(Builder builder) {
         builder.add(RestSyntaxHighlighter.REST_BOLD, AttributesFlyweightBuilder.create()
@@ -25,15 +25,15 @@ public class DarkAdditionalTextAttributesProvider implements EditorColorSchemeEx
             .build());
 
         builder.add(RestSyntaxHighlighter.REST_FIXED, AttributesFlyweightBuilder.create()
-            .withBackground(new RGBColor(0xA3, 0xA0, 0x80))
+            .withBackground(new RGBColor(0xD9, 0xD9, 0xF0))
             .build());
 
         builder.add(RestSyntaxHighlighter.REST_INLINE, AttributesFlyweightBuilder.create()
-            .withBackground(new RGBColor(0x23, 0x64, 0x23))
+            .withBackground(new RGBColor(0xED, 0xFC, 0xED))
             .build());
 
         builder.add(RestSyntaxHighlighter.REST_INTERPRETED, AttributesFlyweightBuilder.create()
-            .withBackground(new RGBColor(0x15, 0x46, 0xC0))
+            .withBackground(new RGBColor(0xCA, 0xDA, 0xBA))
             .build());
     }
 
