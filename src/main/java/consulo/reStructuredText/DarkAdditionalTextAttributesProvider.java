@@ -40,6 +40,6 @@ public class DarkAdditionalTextAttributesProvider implements EditorColorSchemeEx
     @Nonnull
     @Override
     public String getColorSchemeId() {
-        return EditorColorsScheme.DEFAULT_SCHEME_NAME;
+        return EditorColorsScheme.DARCULA_SCHEME_NAME;
     }
 }
