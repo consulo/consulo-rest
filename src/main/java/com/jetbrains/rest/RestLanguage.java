@@ -6,6 +6,9 @@ import com.jetbrains.rest.validation.RestInlineBlockAnnotator;
 import com.jetbrains.rest.validation.RestReferenceTargetAnnotator;
 import consulo.language.Language;
 import consulo.language.template.TemplateLanguage;
+import consulo.localize.LocalizeValue;
+import consulo.reStructuredText.localize.RestLocalize;
+import jakarta.annotation.Nonnull;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -21,9 +24,10 @@ public class RestLanguage extends Language implements TemplateLanguage {
     super("ReST");
   }
 
+  @Nonnull
   @Override
-  public String getDisplayName() {
-    return "Rest language";
+  public LocalizeValue getDisplayName() {
+    return RestLocalize.restLanguageDisplayName();
   }
 
   @Override

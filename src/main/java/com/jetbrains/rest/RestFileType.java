@@ -5,40 +5,49 @@ import consulo.localize.LocalizeValue;
 import consulo.reStructuredText.icon.ReStructuredTextIconGroup;
 import consulo.reStructuredText.localize.RestLocalize;
 import consulo.ui.image.Image;
-
 import jakarta.annotation.Nonnull;
 
 /**
  * User : catherine
- *
+ * <p>
  * file type for restructured text files
  */
 public class RestFileType extends LanguageFileType {
-  public static final RestFileType INSTANCE = new RestFileType();
-  public static final String DEFAULT_EXTENSION = "rst";
+    public static final RestFileType INSTANCE = new RestFileType();
+    public static final String DEFAULT_EXTENSION = "rst";
 
-  private RestFileType() {
-    super(RestLanguage.INSTANCE);
-  }
+    private RestFileType() {
+        super(RestLanguage.INSTANCE);
+    }
 
-  @Nonnull
-  public String getId() {
-    return "ReST";
-  }
+    @Override
+    @Nonnull
+    public String getId() {
+        return "ReST";
+    }
 
-  @Nonnull
-  public LocalizeValue getDescription() {
-    return RestLocalize.restFileTypeDescription();
-  }
+    @Nonnull
+    @Override
+    public LocalizeValue getDisplayName() {
+        return RestLocalize.restFileTypeDisplayName();
+    }
 
-  @Nonnull
-  public String getDefaultExtension() {
-    return DEFAULT_EXTENSION;
-  }
+    @Override
+    @Nonnull
+    public LocalizeValue getDescription() {
+        return RestLocalize.restFileTypeDescription();
+    }
 
-  @Nonnull
-  public Image getIcon() {
-    return ReStructuredTextIconGroup.rst();
-  }
+    @Override
+    @Nonnull
+    public String getDefaultExtension() {
+        return DEFAULT_EXTENSION;
+    }
+
+    @Override
+    @Nonnull
+    public Image getIcon() {
+        return ReStructuredTextIconGroup.rst();
+    }
 }
 
