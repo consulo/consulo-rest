@@ -3,13 +3,13 @@ package com.jetbrains.rest;
 import consulo.annotation.component.ExtensionImpl;
 import consulo.colorScheme.TextAttributesKey;
 import consulo.colorScheme.setting.AttributesDescriptor;
-import consulo.colorScheme.setting.ColorDescriptor;
 import consulo.language.editor.colorScheme.setting.ColorSettingsPage;
 import consulo.language.editor.highlight.SyntaxHighlighter;
 import consulo.language.editor.highlight.SyntaxHighlighterFactory;
-import org.jetbrains.annotations.NonNls;
-
+import consulo.localize.LocalizeValue;
+import consulo.reStructuredText.localize.RestLocalize;
 import jakarta.annotation.Nonnull;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,22 +31,17 @@ public class RestColorsPage implements ColorSettingsPage {
     new AttributesDescriptor("Literal and line blocks", RestSyntaxHighlighter.REST_INLINE),
   };
 
-  @NonNls private static final HashMap<String, TextAttributesKey> ourTagToDescriptorMap = new HashMap<String, TextAttributesKey>();
+  private static final HashMap<String, TextAttributesKey> ourTagToDescriptorMap = new HashMap<String, TextAttributesKey>();
 
 
   @Nonnull
-  public String getDisplayName() {
-    return "ReST file";
+  public LocalizeValue getDisplayName() {
+    return RestLocalize.restText();
   }
 
   @Nonnull
   public AttributesDescriptor[] getAttributeDescriptors() {
     return ATTRS;
-  }
-
-  @Nonnull
-  public ColorDescriptor[] getColorDescriptors() {
-    return ColorDescriptor.EMPTY_ARRAY;
   }
 
   @Nonnull

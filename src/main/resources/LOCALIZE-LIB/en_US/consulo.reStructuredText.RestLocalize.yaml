@@ -18,6 +18,8 @@ rest.file.type.display.name:
     text: reStructuredText
 rest.language.display.name:
     text: reStructuredText
+rest.text:
+    text: ReST
 runcfg.dlg.select.script.path:
     text: 'Select path:'
 runcfg.docutils.command:
