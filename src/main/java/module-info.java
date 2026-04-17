@@ -4,7 +4,10 @@
  */
 module org.jetbrains.plugins.rest
 {
-	requires consulo.ide.api;
+	requires consulo.language.editor.api;
+	requires consulo.language.impl;
+	requires consulo.language.spellchecker.api;
+	requires consulo.file.editor.api;
 
 	exports com.jetbrains.rest;
 	exports com.jetbrains.rest.actions;
