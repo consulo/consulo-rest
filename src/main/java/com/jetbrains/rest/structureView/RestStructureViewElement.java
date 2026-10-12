@@ -6,6 +6,7 @@ import consulo.fileEditor.structureView.StructureViewTreeElement;
 import consulo.language.psi.NavigatablePsiElement;
 import consulo.language.psi.PsiElement;
 import consulo.language.psi.PsiElementVisitor;
+import consulo.localize.LocalizeValue;
 import consulo.navigation.ItemPresentation;
 import consulo.ui.image.Image;
 
@@ -64,16 +65,12 @@ public class RestStructureViewElement implements StructureViewTreeElement {
 
   public ItemPresentation getPresentation() {
     return new ItemPresentation() {
-      public String getPresentableText() {
-        return myElement.getName();
+      public LocalizeValue getPresentableText() {
+        return LocalizeValue.ofNullable(myElement.getName());
       }
 
       @Nullable
       public String getLocationString() {
-        return null;
-      }
-
-      public Image getIcon() {
         return null;
       }
     };
